@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9686EBC2-6B79-4A1B-9179-7F1194153845}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookStore</RootNamespace>
+    <AssemblyName>BookStore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alert\AlertClass.cs" />
+    <Compile Include="Alert\AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert\AlertForm.Designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alert\Report\BtnPrintThisAlert.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BtnPrintThisAlert.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Alert\Report\PrintAllAlert.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintAllAlert.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Author\AddNewAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AddNewAuthor.Designer.cs">
+      <DependentUpon>AddNewAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\AuthorClass.cs" />
+    <Compile Include="Author\Report\PrintAuthorBooks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintAuthorBooks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Author\Report\PrintAuthorList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintAuthorList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Author\Report\PrintThisAuthor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintThisAuthor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Author\SettingAuthorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\SettingAuthorForm.Designer.cs">
+      <DependentUpon>SettingAuthorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\ChooseSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\ChooseSettingsForm.Designer.cs">
+      <DependentUpon>ChooseSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\CreateBackUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\CreateBackUpForm.Designer.cs">
+      <DependentUpon>CreateBackUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\RestoreDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\RestoreDatabaseForm.Designer.cs">
+      <DependentUpon>RestoreDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\AddNewBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\AddNewBookForm.Designer.cs">
+      <DependentUpon>AddNewBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\BooksClass.cs" />
+    <Compile Include="Books\Report\BtnPrintAllBook.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BtnPrintAllBook.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Books\Report\BtnPrintThisBook.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BtnPrintThisBook.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Books\RestorBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\RestorBookForm.Designer.cs">
+      <DependentUpon>RestorBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\SettingBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\SettingBookForm.Designer.cs">
+      <DependentUpon>SettingBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\AddNewCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\AddNewCategory.Designer.cs">
+      <DependentUpon>AddNewCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryClass.cs" />
+    <Compile Include="Category\Report\PrintCategoryBooks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintCategoryBooks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Category\Report\PrintCayegoryList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintCayegoryList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Category\Report\PrintThisCategory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintThisCategory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Category\SettingCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\SettingCategoryForm.Designer.cs">
+      <DependentUpon>SettingCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\AddQuantity.Designer.cs">
+      <DependentUpon>AddQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OrderClass.cs" />
+    <Compile Include="Control\Report\OrderBill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderBill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\DataAcessLayer.cs" />
+    <Compile Include="DAL\Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAL\Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn\LogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn\LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn\LogingClass.cs" />
+    <Compile Include="Main\AdminControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\AdminControlForm.Designer.cs">
+      <DependentUpon>AdminControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\STACForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\STACForm.Designer.cs">
+      <DependentUpon>STACForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher\AddNewPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\AddNewPublisher.Designer.cs">
+      <DependentUpon>AddNewPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherClass.cs" />
+    <Compile Include="Publisher\Report\PrintPublisherBook.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintPublisherBook.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Publisher\Report\PrintPublisherList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintPublisherList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Publisher\Report\PrintThisPublisher.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintThisPublisher.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Publisher\SettingPublisherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\SettingPublisherForm.Designer.cs">
+      <DependentUpon>SettingPublisherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AllReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\AllReportsForm.Designer.cs">
+      <DependentUpon>AllReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AuthorReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\AuthorReportsForm.Designer.cs">
+      <DependentUpon>AuthorReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BookReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BookReportsForm.Designer.cs">
+      <DependentUpon>BookReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CategoryReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CategoryReportsForm.Designer.cs">
+      <DependentUpon>CategoryReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChooseReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ChooseReportsForm.Designer.cs">
+      <DependentUpon>ChooseReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PublisherReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PublisherReportsForm.Designer.cs">
+      <DependentUpon>PublisherReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportClass.cs" />
+    <Compile Include="Reports\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\AddNewUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\AddNewUserForm.Designer.cs">
+      <DependentUpon>AddNewUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserClass.cs" />
+    <Compile Include="Users\UserSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\UserSettingForm.Designer.cs">
+      <DependentUpon>UserSettingForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Alert\AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert\Report\BtnPrintThisAlert.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BtnPrintThisAlert.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert\Report\PrintAllAlert.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintAllAlert.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\AddNewAuthor.resx">
+      <DependentUpon>AddNewAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\Report\PrintAuthorBooks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintAuthorBooks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\Report\PrintAuthorList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintAuthorList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\Report\PrintThisAuthor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintThisAuthor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\SettingAuthorForm.resx">
+      <DependentUpon>SettingAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\ChooseSettingsForm.resx">
+      <DependentUpon>ChooseSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\CreateBackUpForm.resx">
+      <DependentUpon>CreateBackUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\RestoreDatabaseForm.resx">
+      <DependentUpon>RestoreDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\AddNewBookForm.resx">
+      <DependentUpon>AddNewBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\Report\BtnPrintAllBook.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BtnPrintAllBook.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\Report\BtnPrintThisBook.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BtnPrintThisBook.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\RestorBookForm.resx">
+      <DependentUpon>RestorBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\SettingBookForm.resx">
+      <DependentUpon>SettingBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\AddNewCategory.resx">
+      <DependentUpon>AddNewCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\Report\PrintCategoryBooks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintCategoryBooks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\Report\PrintCayegoryList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintCayegoryList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\Report\PrintThisCategory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintThisCategory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\SettingCategoryForm.resx">
+      <DependentUpon>SettingCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AddQuantity.resx">
+      <DependentUpon>AddQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Report\OrderBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderBill.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn\LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\AdminControlForm.resx">
+      <DependentUpon>AdminControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\STACForm.resx">
+      <DependentUpon>STACForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Publisher\AddNewPublisher.resx">
+      <DependentUpon>AddNewPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\Report\PrintPublisherBook.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintPublisherBook.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\Report\PrintPublisherList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintPublisherList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\Report\PrintThisPublisher.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintThisPublisher.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\SettingPublisherForm.resx">
+      <DependentUpon>SettingPublisherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AllReportsForm.resx">
+      <DependentUpon>AllReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AuthorReportsForm.resx">
+      <DependentUpon>AuthorReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BookReportsForm.resx">
+      <DependentUpon>BookReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CategoryReportsForm.resx">
+      <DependentUpon>CategoryReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChooseReportsForm.resx">
+      <DependentUpon>ChooseReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PublisherReportsForm.resx">
+      <DependentUpon>PublisherReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\AddNewUserForm.resx">
+      <DependentUpon>AddNewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserSettingForm.resx">
+      <DependentUpon>UserSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12472456_1037896586281600_7774815764729617058_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\LogInOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-background-9864488.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books+background+picture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamps_books_library_73969_1920x1080.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4386235-a-red-apple-on-a-books-isolated-over-black-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11518381-Seamless-background-with-books-Stock-Vector-book.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pattern-with-books-and-glasses-f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositphotos_7185656-Books-seamless-pattern.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-660_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic_candles_books_darkness_black_background_80426_3840x2160.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookstore.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books-on-wooden-shelf-eps10-vector-illustration_207483610.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\555.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5551.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr_mweup1l3rB1r922buo1_500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vintage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vintage1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21789600-Pile-of-old-books-on-vintage-background-with-Earth-globe-Stock-Photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr_static_tumblr_static_dtd8efdgghkwkco8c8k8sgogs_640.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free-Shipping-Simulation-bookcase-font-b-bookshelf-b-font-wallpaper-tea-shop-cafe-lounge-restaurant-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10-bookshelves-study-background-layout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reading-book1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-book-powerpoint_79672.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11518381-Seamless-background-with-books-Stock-Vector-book1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
